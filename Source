@@ -1,0 +1,38 @@
+--[==[
+
+Anti tampering for obfuscation
+
+This is from my old github from like 2 years ago just reposting
+
+]==]
+
+-- Anti Concat Dump
+local function Punish(...)
+    while true do end
+    end
+
+local UselessAlphabet = {'A','B','C','D','CBA'}
+
+local Shit = {table.concat}
+   if debug.getinfo(Shit[(2-1)]).what ~= UselessAlphabet[3] then
+       C1 = false
+           end
+
+if C1 == false then Punish() end  
+
+
+-- Check functions are not changed? example loadstring
+local SuperCoolBlacklist = {print,error,warn,writefile}
+
+for e,n in pairs(SuperCoolBlacklist)
+                do 
+    if loadstring == n then Punish() 
+                end
+            end  
+
+
+-- Cba finding the linecheck and adding it so yeah simple shit dont cry at me for reposting it.
+
+-- Project PAT (public anti tamper) written for lua lock v1 (2022)
+
+
